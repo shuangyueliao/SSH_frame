@@ -1,0 +1,9 @@
+eclipse.preferences.version=1
+encoding//src/ReadMe=UTF-8
+encoding//src/com/lxd/action/IndexAction.java=UTF-8
+encoding//src/com/lxd/action/LoginAction.java=UTF-8
+encoding//src/com/lxd/action/RegisterAction.java=UTF-8
+encoding//src/com/lxd/dao/impl/AdminDaoImpl.java=UTF-8
+encoding//src/com/lxd/dao/impl/StudentDaoImpl.java=UTF-8
+encoding//src/com/lxd/dao/impl/TeacherDaoImpl.java=UTF-8
+encoding//src/com/lxd/dao/impl/UserDaoImpl.java=UTF-8

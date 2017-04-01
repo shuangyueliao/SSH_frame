@@ -1,0 +1,36 @@
+科研项目管理系统
+
+1. 项目来源 https://github.com/Leixiaodong/SSH2
+
+2. 项目重建 for MyEclipse
+2.1 spring 4.0 + struts 2.3 + hibernate 4.0
+2.2 jstl 1.1 (build path - myeclipse lib)
+2.3 struts.xml支持DMI
+	<constant name="struts.enable.DynamicMethodInvocation" value="true"/>
+2.4 自动创建数据库表
+	drop database ***
+	create database ***
+	mysql的数据库编码修改为utf8
+		windows：http://www.testwo.com/blog/6930
+		mac：http://www.jb51.net/article/95952.htm
+	web.xml
+		<prop key="hibernate.hbm2ddl.auto">update</prop>
+
+3. Bean配置
+3.1 @Autowired或@Resource
+    在Bean类中使用自动注入功能：通过@Autowired或@Resource为 Bean 的成员变量、方法入参或构造函数入参提供自动注入的功能。
+    比如项目中的*Action注入*Dao对象
+3.2 @Component注释
+    注意：我们项目用Spring 4.0，还有struts2-spring-plugin插件，因此项目中的*Action可以不使用@Component，但*DaoImpl仍然需要该注释
+    通过@Autowired或@Resource，在Bean类中使用自动注入功能，但是 Bean 还是在 XML 文件中还是需要通过 <bean> 进行定义。
+    如何在XML配置文件中完全移除 Bean 定义的配置？答案是使用@Component注释，另外需要在XML中增加：<context:component-scan base-package="com.lxd"/>
+    比如项目中的*Action
+
+3. 项目使用
+管理员后台创建各种内容
+管理员修改失败，因为JSP出错 <input name="admin.name "
+先增加教师，才能增加项目，因为项目有教师ID
+先增加年级，才能增加学生，因为学生有年级ID
+
+4. 增加年级
+4.1 依次增加bean、hbm.xml并在XML中添加该映射文件、Dao、DaoImpl、Action并在XML中增加该控制器、JSP以及修改admin/left.jsp；Grade的表字段为name和grade_id,在JSP使用name，不要用grade
